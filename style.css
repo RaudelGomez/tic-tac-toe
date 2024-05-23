@@ -60,11 +60,6 @@ table th {
 	}
 }
 
-#circle {
-	width: 70px;
-	height: 70px;
-}
-
 #circle circle {
 	fill: none;
 	stroke: #00b0ef;
@@ -80,11 +75,6 @@ table th {
 	to {
 		stroke-dasharray: 140 140;
 	}
-}
-
-#cross {
-	width: 70px;
-	height: 70px;
 }
 
 #cross line {

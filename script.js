@@ -56,8 +56,10 @@ function makeMove(index) {
 }
 
 function renderCircle() {
+	const width = 70;
+	const height = 70;
 	const circle = `
-      <svg id="circle" viewBox="0 0 70 70">
+      <svg id="circle" style="width:${width}px; height:${height}px" viewBox="0 0 70 70">
           <circle cx="35" cy="35" r="25"></circle>
       </svg>
   `;
@@ -65,8 +67,10 @@ function renderCircle() {
 }
 
 function renderCross() {
+	const width = 70;
+	const height = 70;
 	const cross = `
-      <svg id="cross" viewBox="0 0 70 70">
+      <svg id="cross" style="width:${width}px; height:${height}px" viewBox="0 0 70 70">
           <line x1="15" y1="15" x2="55" y2="55"></line>
           <line x1="15" y1="55" x2="55" y2="15"></line>
       </svg>
