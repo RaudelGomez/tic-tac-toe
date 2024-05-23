@@ -31,9 +31,9 @@ function render() {
 				: ""; */
 			if (fields[index]) {
 				if (fields[index] === "circle") {
-					fieldContent = "O";
+					fieldContent = renderCircle();
 				} else {
-					fieldContent = "X";
+					fieldContent = renderCross();
 				}
 			} else {
 				fieldContent = "";
@@ -53,4 +53,23 @@ function makeMove(index) {
 		fields[index] = "cross"; // For example, always cross. You can change this to alternate turns.
 		render();
 	}
+}
+
+function renderCircle() {
+	const circle = `
+      <svg id="circle" viewBox="0 0 70 70">
+          <circle cx="35" cy="35" r="25"></circle>
+      </svg>
+  `;
+	return circle;
+}
+
+function renderCross() {
+	const cross = `
+      <svg id="cross" viewBox="0 0 70 70">
+          <line x1="15" y1="15" x2="55" y2="55"></line>
+          <line x1="15" y1="55" x2="55" y2="15"></line>
+      </svg>
+  `;
+	return cross;
 }

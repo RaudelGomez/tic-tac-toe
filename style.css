@@ -50,3 +50,46 @@ table td,
 table th {
 	border: 5px solid white;
 }
+
+@keyframes fillCircle {
+	from {
+		stroke-dasharray: 0 157;
+	}
+	to {
+		stroke-dasharray: 157 157;
+	}
+}
+
+#circle {
+	width: 70px;
+	height: 70px;
+}
+
+#circle circle {
+	fill: none;
+	stroke: #00b0ef;
+	stroke-width: 7;
+	stroke-dasharray: 0 157;
+	animation: fillCircle 1s forwards;
+}
+
+@keyframes fillCross {
+	from {
+		stroke-dasharray: 0 140;
+	}
+	to {
+		stroke-dasharray: 140 140;
+	}
+}
+
+#cross {
+	width: 70px;
+	height: 70px;
+}
+
+#cross line {
+	stroke: #ffc000;
+	stroke-width: 10;
+	stroke-dasharray: 0 140;
+	animation: fillCross 2.5s forwards;
+}
