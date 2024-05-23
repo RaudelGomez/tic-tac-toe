@@ -1,0 +1,52 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: #323232;
+	font-family: "Open Sans", sans-serif;
+	color: white;
+}
+
+h1 {
+	font-size: 64px;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 40px;
+	font-weight: 900;
+}
+
+.circle {
+	color: blue;
+}
+
+.cross {
+	color: red;
+}
+
+table {
+	border-collapse: collapse;
+	border-style: hidden;
+}
+
+table td,
+table th {
+	border: 5px solid white;
+}
