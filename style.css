@@ -25,12 +25,17 @@ table {
 }
 
 td {
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
+	border: 5px solid white;
 	text-align: center;
 	vertical-align: middle;
-	font-size: 40px;
-	font-weight: 900;
+	position: relative;
+	cursor: pointer;
+}
+
+td:hover {
+	background-color: rgba(255 255 255/30%);
 }
 
 .circle {
@@ -82,4 +87,12 @@ table th {
 	stroke-width: 10;
 	stroke-dasharray: 0 140;
 	animation: fillCross 2.5s forwards;
+}
+
+.winning-line {
+	position: absolute;
+	height: 5px;
+	background-color: white;
+	transform-origin: left center;
+	pointer-events: none;
 }
