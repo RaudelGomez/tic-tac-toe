@@ -92,11 +92,17 @@ function markWinningLine(combination) {
 		x2 - x1
 	)}rad)`;
 	document.querySelector("#container").appendChild(line);
+
+	//Painting background red
+	combination.forEach((index) => {
+		const td = document.querySelectorAll("td")[index];
+		td.classList.add("winner");
+	});
 }
 
 function renderCircle() {
-	const width = 70;
-	const height = 70;
+	const width = 65;
+	const height = 65;
 	const circle = `
       <svg id="circle" style="width:${width}px; height:${height}px" viewBox="0 0 70 70">
           <circle cx="35" cy="35" r="25"></circle>
@@ -106,8 +112,8 @@ function renderCircle() {
 }
 
 function renderCross() {
-	const width = 70;
-	const height = 70;
+	const width = 65;
+	const height = 65;
 	const cross = `
       <svg id="cross" style="width:${width}px; height:${height}px" viewBox="0 0 70 70">
           <line x1="15" y1="15" x2="55" y2="55"></line>
@@ -115,4 +121,9 @@ function renderCross() {
       </svg>
   `;
 	return cross;
+}
+
+function restartGame() {
+	fields = [null, null, null, null, null, null, null, null, null];
+	render();
 }

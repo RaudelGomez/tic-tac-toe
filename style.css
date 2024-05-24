@@ -8,6 +8,7 @@ body {
 	background-color: #323232;
 	font-family: "Open Sans", sans-serif;
 	color: white;
+	box-sizing: border-box;
 }
 
 h1 {
@@ -94,8 +95,60 @@ table th {
 .winning-line {
 	position: absolute;
 	height: 5px;
-	background-color: white;
-	transform-origin: left center;
+	background-color: white; /* transform-origin: left center; */
 	pointer-events: none;
 	left: 0;
+	transition: all 0.5s; /* Transición suave para la animación */
+	transform-origin: left center; /* Punto de origen de la transformación o 0% 50%*/
+	z-index: 1; /* Asegurar que esté sobre las celdas del juego */
+	animation: drawLine 0.5s forwards; /* Aplica la animación con los keyframes definidos */
+}
+
+@keyframes drawLine {
+	from {
+		width: 0; /* Ancho inicial de la línea */
+	}
+}
+
+/* Painting background red */
+.winner {
+	background-color: rgba(234, 18, 18, 0.3);
+	position: relative;
+}
+
+button {
+	background-color: #4caf50; /* Color de fondo */
+	border: 1px solid white;
+	color: white; /* Color del texto */
+	padding: 10px 20px; /* Espaciado interno */
+	text-align: center; /* Alineación del texto */
+	text-decoration: none; /* Sin subrayado */
+	display: inline-block; /* Mostrar como un bloque en línea */
+	font-size: 16px; /* Tamaño de fuente */
+	margin: 40px; /* Margen */
+	cursor: pointer; /* Cambiar el cursor al pasar */
+	border-radius: 8px; /* Borde redondeado */
+	transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+button:hover {
+	background-color: #85e48a; /* Color de fondo al pasar el mouse #45a049*/
+	color: #003d03;
+	animation: borderLine 75ms forwards;
+	font-weight: 700;
+}
+
+@keyframes borderLine {
+	from {
+		border: 0; /* border inicial de la línea */
+	}
+	to {
+		border: 1px solid #003d03; /* border final de la línea */
+	}
+}
+
+@media (max-width: 450px) {
+	h1 {
+		font-size: 40px;
+	}
 }
