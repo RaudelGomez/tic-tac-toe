@@ -3,6 +3,7 @@ let currentPlayer = "circle"; // Empieza el jugador "circle"
 
 function init() {
 	render();
+	renderHeadlineGame();
 }
 
 function render() {
@@ -59,12 +60,18 @@ function checkGameOver() {
 		if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
 			markWinningLine(combination);
 			/* alert(`Player ${currentPlayer} wins!`); */
+			endOverWarning(`Player ${currentPlayer} wins!`);
+			const tds = document.querySelectorAll("td");
+			tds.forEach((td) => {
+				td.removeAttribute("onclick");
+			});
 			return true; // Juego terminado
 		}
 	}
 
 	if (fields.every((field) => field !== null)) {
-		alert("It's a draw!");
+		// alert("It's a draw!");
+		endOverWarning("It's a draw!");
 		return true; // Empate
 	}
 
@@ -126,4 +133,18 @@ function renderCross() {
 function restartGame() {
 	fields = [null, null, null, null, null, null, null, null, null];
 	render();
+	document.getElementById("end-over-container").innerHTML = "";
+}
+
+function renderHeadlineGame() {
+	document.getElementById("headline-game").innerHTML = /*html*/ `
+    <div>${renderCircle()} <span>First player</span></div>
+    <div>${renderCross()} <span>Second player</span></div>
+  `;
+}
+
+function endOverWarning(message) {
+	document.getElementById("end-over-container").innerHTML = /*html*/ `
+    ${message}
+  `;
 }

@@ -147,8 +147,55 @@ button:hover {
 	}
 }
 
+#headline-game {
+	margin-bottom: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+}
+
+#headline-game div {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.end-over-container {
+	margin-top: 24px;
+	text-align: center;
+	font-size: 48px;
+}
+
+@media (max-width: 550px) {
+	#headline-game {
+		margin-bottom: 24px;
+		display: block;
+	}
+
+	#headline-game div,
+	button {
+		font-size: 14px;
+		margin: 24px;
+	}
+
+	.end-over-container {
+		margin-top: 16px;
+		font-size: 32px;
+	}
+}
+
 @media (max-width: 450px) {
 	h1 {
 		font-size: 40px;
+	}
+
+	.end-over-container {
+		margin-top: 16px;
+		font-size: 24px;
+	}
+
+	button {
+		margin: 16px;
 	}
 }
