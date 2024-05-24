@@ -58,7 +58,7 @@ function checkGameOver() {
 		const [a, b, c] = combination;
 		if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
 			markWinningLine(combination);
-			alert(`Player ${currentPlayer} wins!`);
+			/* alert(`Player ${currentPlayer} wins!`); */
 			return true; // Juego terminado
 		}
 	}
